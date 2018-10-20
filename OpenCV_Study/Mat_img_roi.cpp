@@ -1,4 +1,5 @@
-// Simple Image Read
+// Mat img roi(copy)
+
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
@@ -7,9 +8,8 @@ using namespace cv;
 
 int main()
 {
-    char *fn = "/users/sujinlee/desktop/OpenCV_Study/OpenCV_Study/test.jpg";
+    char *fn = "/users/sujinlee/desktop/prac/prac/test.jpg";
     namedWindow("img",0);
-    
     
     Mat img = imread(fn, CV_LOAD_IMAGE_COLOR);
     
@@ -18,12 +18,15 @@ int main()
         return -1;
     }
     
-    namedWindow("Image", WINDOW_AUTOSIZE);
-    imshow("Image", img);
+    Rect r(img.cols/4, img.rows/4, img.cols/4*2, img.rows/4*2);
+    
+    //roi ref img.. so connected
+    Mat roi(img, r);
+    bitwise_not(roi, roi);
+    imshow("rio", roi);
+    imshow("img", img);
     
     waitKey(0);
-    
-    destroyAllWindows();
     
     return 0;
 }
