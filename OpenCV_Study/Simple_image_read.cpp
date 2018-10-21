@@ -10,7 +10,6 @@ int main()
     char *fn = "/users/sujinlee/desktop/OpenCV_Study/OpenCV_Study/test.jpg";
     namedWindow("img",0);
     
-    
     Mat img = imread(fn, CV_LOAD_IMAGE_COLOR);
     
     if(!img.data){
