@@ -1,4 +1,3 @@
-// threshold
 // binary = 2개의 색상(2진화 된 영상)
 //histogram = 영상의 밝기 값을 빈도수로 나타낸 것
 //ex) 100의 값이 몇개가 있는지 측정(voting이라 불림)
